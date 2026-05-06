@@ -1,8 +1,9 @@
 # Load packages
 library(survival)
+library(ggplot2)
 
-# Load dataset
-data(lung)
+# Load built-in dataset
+lung <- survival::lung
 
 # View dataset
 summary(lung)
@@ -25,7 +26,7 @@ install.packages("survminer")
 # Load package
 library(survminer)
 
-# Plot Kaplan-Meier curve
+# Create survival curve
 km_plot <- ggsurvplot(
   km_fit,
   data = lung,
@@ -34,5 +35,9 @@ km_plot <- ggsurvplot(
   conf.int = TRUE
 )
 
-# Save plot
-ggsave("km_curve.png", plot = km_plot$plot)
+# Display plot
+km_plot
+
+# Save Kaplan-Meier plot
+ggsave("km_curve.png", plot = km_plot$plot, width = 8, height = 6)
+
