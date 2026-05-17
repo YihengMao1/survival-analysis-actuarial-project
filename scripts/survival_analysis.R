@@ -9,7 +9,7 @@ lung <- survival::lung
 summary(lung)
 
 # Kaplan-Meier model
-km_fit <- survfit(Surv(time, status) ~ 1, data = lung)
+km_fit <- survfit(Surv(time, status) ~ sex, data = lung)
 
 # Print result
 summary(km_fit)
