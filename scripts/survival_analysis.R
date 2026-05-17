@@ -33,6 +33,7 @@ km_plot <- ggsurvplot(
   risk.table = TRUE,
   pval = TRUE,
   conf.int = TRUE
+  title = "Kaplan-Meier Survival Curve by Sex"
 )
 
 # Display plot
